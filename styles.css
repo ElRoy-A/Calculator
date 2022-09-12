@@ -1,0 +1,100 @@
+:root {
+    --clr-white: rgb(255, 255, 255);
+    --clr-white-soft: rgba(255, 255, 255, 0.75);
+    --clr-black: rgba(0, 0, 0, 0.75);
+    --clr-equalsbtn: rgb(255, 165, 0);
+    --clr-equalsbtn-hover: rgb(150, 100, 0);
+}
+
+/* Global styling */
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to left, #CDCECF, #9C9898);
+}
+
+/* Calculator grid styling */
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 10rem);
+    grid-template-rows: minmax(12rem, auto) repeat(5, 10rem);
+}
+.calculator-grid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid var(--clr-white);
+    outline: none;
+    background-color: var(--clr-white-soft);
+}
+.calculator-grid > button:hover {
+    background-color: var(--clr-white);
+}
+.span-two-columns {
+    grid-column: span 2;
+}
+
+/* Ouput (previous and current value) styling */
+.output {
+    grid-column: 1 / -1;
+    background-color: var(--clr-black);
+    color: var(--clr-white);;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 0.5rem;
+    word-break: break-all;
+}
+#previous-value {
+    color: var(--clr-white-soft);
+    font-size: 1.5rem;
+    padding-right: 0.5rem;
+}
+#current-value {
+    color: var(--clr-white);
+    font-size: 2.5rem;
+    padding-right: 0.5rem;
+}
+
+/* Equals button styling */
+#equals {
+    background-color: var(--clr-equalsbtn);
+}
+#equals:hover {
+    background-color: var(--clr-equalsbtn-hover);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    margin-top: -5rem;
+}
+footer > p {
+    color: var(--clr-black);
+}
+
+.fa-github {
+    color: var(--clr-black);
+    font-size: 2rem;
+    transition: transform 0.3s ease-in-out;
+    padding-left: 0.5rem;
+}
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+}
